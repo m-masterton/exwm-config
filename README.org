@@ -1,1 +1,78 @@
-# exwm-config
+#+TITLE: Dotfiles
+#+AUTHOR: Max Masterton
+
+* How do these dotfiles work?
+These dotfiles are read by several programs and are used to configure my computer environment.
+
+These dotfiles only work for linux and freebsd systems, they are not compatible with non-free systems or systems that are not unix derivatives. To use these dotfiles you should already have a solid grasp on emacs and using a minimal software system (FreeBSD, Arch Linux, Gentoo).
+
+While this repository contains dotfiles for a variety of programs, my workflow is centered around emacs, so most of the data in this file is concentrated in the ~./.emacs.d/init.el~ file. In this file I use a variety of external elisp packages to add features not provided by emacs by default.
+
+** Packages:
++ =use-package= - for cleaner code when using package.el to manage packages
++ =auto-package-update= - to update emacs packages in regular intervals with certain configuration
++ =gcmh= (Garbage Collection Magic Hack) - to use garbace collection to improve performace when starting emacs
++ =smooth-scrolling= - for cleaner scrolling in pure emacs buffers
++ =doom-themes= - a collection of aesthetically pleasing themes
++ =all-the-icons= - A collection of icon sets that are useful for a variety of purposes
++ =emojify= - For emojis (which are only used as icons)
++ =ivy= - an autocompletion engine for emacs, extended by counsel
++ =counsel= - ivy-intergration with a variety of other emacs-based programs
++ =ivy-rich= - descriptions of M-x commands when in an ivy-buffer
++ =smex= - history for M-x commands
++ =swiper= - search text through a counsel (ivy) buffer
++ =ivy-posframe= - Render the window in a variety of more usefull positions
++ =winum= - to label windows
++ =telephone-line= - A more modern implementation of powerline for emacs, that means a ccustomizable, aesthetically pleasing modeline can be used
++ =rainbow-delimiters= - Colour code brackets (same as popular vscode extention)
++ =evil-nerd-commenter= - Expected behaviour for commenting out lines using a keybinding
++ =which-key= - Suggest keybindings for long key strings
++ =general= - A simple interface for mapping long keybindings in emacs
++ =recentf= - Find recently accessed files quickly
++ =writeroom-mode= - A distraction free interface for writing in an emacs buffer
++ =evil= - Vim keybinding emulation within emacs, limited functionality when controlling EXWM buffers.
++ =evil-collection= - A collection of packages to help intergrate evil keybindings into all sorts of emacs scenarios
++ =hydra= - Functional keybindings for repetitive tasks (buffer scalling, text scalling, buffer cycling)
++ =projectile= - Project managment workflow within emacs
++ =counsel-projectile= - Counsel intergration with projectile M-x commands - mainly used for ripgrepping across a project
++ =magit= - Magical git porecline for emacs
++ =treemacs= - Project sidebar for emacs, simmilar to Nerdtree for vim
++ =treemacs-evil= - Must be used if using both treemacs and evil
++ =treemacs-all-the-icons= - Treemacs theme using all-the-icons' github icons
++ =dired-single=, =dired-open=, =peep-dired= - Making dired easier to use
++ =term= - Minimal terminal emulator for emacs
++ =eterm-256color= - Color support for term-mode
++ =eshell= - Fast terminal emulator with it's own shell
++ =eshell-git-prompt= - Powershell theme for eshell
++ =vterm= - Feature rich terminal emulator
++ =elfeed= - RSS reader for emacs
++ =elfeed-goodies= - An extention to elfeed which brings functional and aesthetic change
++ =eww= - Emacs Web Wowser (a CLI web browser for emacs)
++ =lsp-mode= - Bringing IDE features for emacs (requires external programs)
++ =company= - Better interface for autocompletions within prog-modes
++ =company-box= - Better apperance for company
++ =lsp-ui= - UI improvements when using lsp-mode
++ =lsp-treemacs= - Lsp-mode intergration with treemacs
++ =lsp-ivy= - Quicker symbol searching with ivy
++ =dap-mode= - Used to debug code
++ =python-mode= - Python support within emacs
++ =lsp-pyright= - Language Server for LSP mode for python
++ =rust-mode= - Rust language support within emacs (requires external programs)
++ =go-mode= - Golang language support within emacs (requires external programs)
++ =org= - Org mode notation system
++ =org-tempo= - Functional enhancements for speeding up org workflow
++ =org-bullets= - Diffrenciated aesthetically pleasing bullets for emacs
++ =dmenu= - A program within emacs that mirrors the functionality of the suckless dmenu program
++ =exwm= - Emacs X Window Manager, allows for use of Emacs as the /Desktop Environment/.
++ =desktop-environment= - Commands to control multimedia through emacs
+
+** This setup requires some more dependencies to function properly, These include:
++ =nitrogen= - For mapping and selecting wallpapers
++ =picom= - For use as a compositor
++ =zsh= - As a shell (bash or any other shell, could be used)
++ =lightdm= - As a display manager, although =xorg-xinit= could be used
+
+Please note that other programs (e.g. X11) are obviously required, you should install these dependency programs first.
+
+** Optional extras
++ =spectrwm= - Spectrwm is used as a backup window manager in the case that you mess up your init.el file and need to load something else to fix it.
