@@ -1,6 +1,13 @@
 #+TITLE: Dotfiles
 #+AUTHOR: Max Masterton
 
+* Example Photos
+Here are some example photos of how this configuration may look:
+
+[[./media/example1.png]]
+[[./media/example2.png]]
+
+
 * How do these dotfiles work?
 These dotfiles are read by several programs and are used to configure my computer environment.
 
