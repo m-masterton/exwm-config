@@ -79,7 +79,12 @@ While this repository contains dotfiles for a variety of programs, my workflow i
 + =zsh= - As a shell (bash or any other shell, could be used)
 + =lightdm= - As a display manager, although =xorg-xinit= could be used
 
-Please note that other programs (e.g. X11) are obviously required, you should install these dependency programs first.
+Please note that other programs (e.g. X11 and Emacs) are obviously required, you should install these dependency programs first. Some less obvious other dependencies are the language servers for lsp-mode these are:
+
++ =ccls= - Language server for C/C++ Development
++ =gopls= - Language server for Go Development
++ =rls= - Language server for Rust Development
+  (Other language servers come as emacs packages)
 
 ** Optional extras
 + =spectrwm= - Spectrwm is used as a backup window manager in the case that you mess up your init.el file and need to load something else to fix it.
