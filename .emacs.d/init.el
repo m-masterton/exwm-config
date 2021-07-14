@@ -125,6 +125,7 @@
 (global-display-line-numbers-mode 1)
 (dolist (mode '(org-mode-hook
 				term-mode-hook
+				vterm-mode-hook
 				treemacs-mode-hook
 				;elfeed-search-mode-hook
 				elfeed-show-mode-hook
@@ -646,7 +647,6 @@
   :config
   (add-hook 'rust-mode-hook
 			(lambda () (setq indent-tabs-mode nil)))
-  (define-key rust-mode-map (kbd "C-c C-c" 'rust-run))
   (add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
 										   (lsp-format-buffer)))))
 ;; C
@@ -819,6 +819,9 @@
 
 		  ;; Toggle modeline
 		  ([?\s-m] . exwm-layout-toggle-mode-line)
+
+		  ;; Quit current buffer
+		  ([?\s-q] . kill-current-buffer)
 		  
           ;; Move between windows
           ([?\s-h] . windmove-left)
