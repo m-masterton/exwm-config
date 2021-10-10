@@ -1,0 +1,27 @@
+#!/usr/bin/zsh
+
+createmenu ()
+{
+  arrsize=$1
+
+  PS3="select window to raise: "
+  select option in "${@:2}"; do
+    if [ "$REPLY" -eq "$arrsize" ];
+    then
+      echo "bye..."
+      break;
+    elif [ 1 -le "$REPLY" ] && [ "$REPLY" -le $((arrsize-1)) ];
+    then
+      $(hidden -c | grep -i ${window_list[REPLY]} | awk -F: '{print $NF}' | tr -d "'")
+      break;
+    else
+      echo "no window. select a number 1-$arrsize"
+    fi
+  done
+}
+
+declare -a window_list=($(/usr/local/bin/hidden | awk '{print $1}' | tr '[:upper:]' '[:lower:]'))
+
+window_list+=("quit")
+
+createmenu "${#window_list[@]}" "${window_list[@]}"

@@ -1,0 +1,3 @@
+emulate -L zsh
+#mpv --audio-device=pulse/1 ytdl://ytsearch10:"$@"
+mpv --volume=60 ytdl://ytsearch10:"$@"
